@@ -17,6 +17,8 @@ spec:
       labels:
         app: airflow-kubes-pod
     spec:
+      dnsPolicy: Default
+      serviceAccountName: default
       containers:
       - image: airflow-kubes
         name: airflow-app

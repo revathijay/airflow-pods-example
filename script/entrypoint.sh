@@ -42,6 +42,7 @@ wait_for_port() {
   done
 }
 
+echo $AIRFLOW__CORE__EXECUTOR
 # Other executors than SequentialExecutor drive the need for an SQL database, here PostgreSQL is used
 if [ "$AIRFLOW__CORE__EXECUTOR" != "SequentialExecutor" ]; then
   # Check if the user has provided explicit Airflow configuration concerning the database
