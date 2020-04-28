@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: airflow-kubes-pod
+  name: airflow-kubes-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: airflow-kubes-pod
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: airflow-kubes-pod
+    spec:
+      containers:
+      - image: airflow-kubes
+        name: airflow-app
+        resources: {}
+        imagePullPolicy: Never
